@@ -1,0 +1,99 @@
+Programming Notes:
+
+to do:
+Link to documentation
+Link to mailto 
+Schools clustering
+Faster loading of Defra maps and schools
+
+http://www.homepages.ucl.ac.uk/~ucesres/sunburst/BM.html  
+
+There are some schools with the same location
+
+python -m SimpleHTTPServer
+
+Then access page via .. 
+http://localhost:8000/index.html
+
+Sometimes browser will cache js. Either idabale this via the network tabl in dev tools, or use XTRL+F5
+
+json needs latitude and longitude to bo cinverted to geojson using method above
+to derive these project to WGs and derive coordinates (x,y) coordinates
+
+Look at jupytter notebook for method to dump dicts to json objects, or at least the string format
+
+can change a csv to geojson here
+http://csv.togeojson.com/
+bit slow, but does work
+Beware that it converts all columns to strings, other than coordinates, this is fairly easy to change in python
+if, as in the case of no2 conc, the data needs to be read as umbers, e.g. for interval scale
+
+to make line shape file to geojson, reporject to wgs
+then use http://mapshaper.org/ - does not preserve properties, only lines, also not very accurate
+
+https://ogre.adc4gis.com/ - does appear to preserve coordinate
+
+
+load from spreadsheet into arc
+plot xy (bng)
+reproject to wgs
+calculate geometry for lat lon
+export by country
+
+using the following command
+ogr2ogr -f GeoJSON -t_srs crs:84 all_150_wgs_v1.json all_150_wgs_w_lat.shp
+ogr2ogr -f GeoJSON -t_srs crs:84 all_schools_wales.json all_wales_wgs_w_lat.shp
+ogr2ogr -f GeoJSON -t_srs crs:84 all_schools_england.json all_eng_wgs_w_lat.shp
+ogr2ogr -f GeoJSON -t_srs crs:84 all_schools_scotland.json all_scot_wgs_w_lat.shp
+ogr2ogr -f GeoJSON -t_srs crs:84 all_schools_ni.json all_ni_wgs_w_lat.shp
+
+
+
+see here to only put grid over at certain zoom
+https://www.mapbox.com/mapbox-gl-js/example/updating-choropleth/
+
+
+some decent color pickers
+http://www.color-hex.com/color-names.html
+http://colorbrewer2.org/
+
+
+# defunct code
+
+.grow {
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+  height: 49px;
+  width: 22%;
+  margin: 5px 1% 5px 1%;
+  float: left;
+  position: relative;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+  overflow: hidden;
+  z-index: 5;
+}
+.grow:hover {
+  height: 145px;
+}
+
+
+<div class="grow" style="background-color: #2a75a9;">
+        <h2>Title</h2>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
+    </div>
+
+	<div id="title" class='title'><h1>Nitrogen Dioxide (NO<sub>2</sub>) and Schools</h1></div>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100198213-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

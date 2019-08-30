@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Created by Ed Sharp ed.sharp@ucl.ac.uk | 26/05/2017 -->
+    <meta charset="utf-8" />
+    <!-- Mapbox javascript and css files -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- custom CSS     -->
+    <link href="css/custom.css" rel="stylesheet" />
+    <title>Exposure to Nitrogen Dioxide in UK Schools</title>
+</head>
+<body>
+    <!--Password protect beta version <script src="js/password.js"></script> -->
+    <!-- Mapbox map for now override css, but can revert if siderbar is desired-->
+    <div id='map' class='mapboxmap'>
+        <!-- add meu to toggle layers-->
+        <nav id="menu"></nav>
+        <div id='boxed_title' class='title_in_box'>
+            <h1>Nitrogen Dioxide (NO<sub>2</sub>) and Schools</h1>
+        </div>
+        <!-- Info box describing elements-->
+        <div id='information' class='info'>
+           <img src="data/Info-Button.png" height="42" width="42" />
+               <span class="tooltiptext">
+                 This map shows UK educational establishments relative to NO<sub>2</sub>
+                 concentrations in the air, from background sources and at the roadside.  <br />
+                    <br />
+                 Use the menu to the right hand side to turn layers on and off and zoom in
+                 to see more detail and extra layers. Click on schools to get location specific information.<br />
+                    <br />
+                 Schools which are less than 150 m from roads which exceed the European Union legal limit value of 40  &#181;g/m<sup>3</sup>
+                 have been extracted from national databases of educational establishments.<br />
+                    <br />
+                 All schools from those databases are described, showing background concentration and the distance to 
+                 the nearest road exceeding the limit value.<br />
+                    <br />
+                 Defra data describes concentrations 4 m from the kerb, distances are measured to their representation 
+                 of the road centre, therefore it is likely that distances have been overestimated. School locations may 
+                 be incorrect, where you think this is the case please use the feedvabck link in the popup and provide a 
+                 more accurate positional estimate.<br />
+                    <br />
+                 For a full list of data sources and a description of the method used to derive
+                 distances see the <a >Link text</a>.               
+                </span>
+        </div>
+        <div id='information' class='info_2' onclick="location.href = 'https://dl.dropboxusercontent.com/u/4076462/Nitrogen_Dioxide_and_Schools_Report_top.docx';"&nbsp;>
+            <img src="data/document-xxl.png" height="42" width="42" />
+            <span class="tooltiptext1">
+                Documentation download
+            </span>
+        </div>
+        <div id='contact' class='info_3'  onclick="location.href = 'mailto:name@email.com';"&nbsp;>
+            <img src="data/mail.png" height="42" width="42" />
+            <span class="tooltiptext1">
+                
+            </span>
+        </div>
+        <div id='contact' class='info_4' onclick="window.open('http://www.ucl.ac.uk','mywindow');" style="cursor: pointer;"&nbsp;>
+            <img src="data/standalone_ucl.png" height="44" width="154" />
+            <span class="tooltiptext1">
+
+            </span>
+        </div>
+        <div id='contact' class='info_5' onclick="window.open('https://www.clientearth.org/', 'mywindow1');" style="cursor: pointer;"&nbsp;>
+            <img src="data/clientearth_website_logo.png" height="52" width="154" />
+            <span class="tooltiptext1">
+
+            </span>
+        </div>
+        <!-- code for map overlays -->
+        <script src="js/schools_map.js"></script> 
+        <!-- add html elements to the legend !-->
+        <div id='road_legend' class='legend'>
+            <h4>Roadside or Background <br />NO<sub>2</sub> concentration (&#181;g/m<sup>3</sup>)</h4>
+            <div><span style='background-color: #1b9e77'></span>0 - 30</div>
+            <div><span style='background-color: #d95f02'></span>30 - 40</div>
+            <div><span style='background-color: #7570b3'></span>40 - 50</div>
+            <div><span style='background-color: #e7298a'></span>50 - 60</div>
+            <div><span style='background-color: #1a1a1a'></span>60 - 130</div>
+        </div>
+    </div>
+</body>
+</html>
+

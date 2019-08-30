@@ -4,7 +4,8 @@ data/CSV/*
 data/edubasealldata20190816.csv
 data/LAEI_2016_Concentrations_Data_CSV.zip
 data/LAEI_2016_Concentrations_Maps.zip
-
+web_mapping/data/
+web_mapping/london/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
