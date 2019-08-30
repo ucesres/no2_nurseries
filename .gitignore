@@ -6,6 +6,7 @@ data/LAEI_2016_Concentrations_Data_CSV.zip
 data/LAEI_2016_Concentrations_Maps.zip
 web_mapping/data/
 web_mapping/london/
+web_mapping/py_code/Profile-20170531T150440.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
